@@ -127,17 +127,55 @@ select{
     background: transparent;
     border: none;
     font-weight: 400;
-    min-width: 140px;
+    min-width: 120px;
     padding: 7px 7px;
     border: 1px solid #707070;
     cursor: pointer;
+    border-radius: 4px;
 }
 .submitButton{
     border: none;
-    background-color: #f5f5f5;
+    background-color: #e4e3e3;
     margin-right: 30px;
 }
 .cancelButton{
+    border: none;
     text-decoration: none;
     text-align: center;
+    background-color: #e4e3e3;
+}
+.resetButton{
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    background-color: #e4e3e3;
+}
+@media only screen and (max-width: 960px) {
+    .cancelButton{
+        margin-left: 0px;
+    }
+    .form{
+        width: 85%;
+        padding: 44px 20px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .form{
+        margin-top: 10px;
+    }
+    .submit-reset{
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .submitButton{
+        margin: 0;
+    }
+    .buttonParent{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
 }
