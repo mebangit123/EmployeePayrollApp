@@ -48,6 +48,35 @@
                         </label>
                     </div>
                 </div>
+                <div class="row-content" style="margin-top: 30px;">
+                    <label class=" label text" for="gender">Gender</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="row-content" style="margin-top: 30px;">
+                    <label class=" label text" for="deoartnent">Department</label>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                        <label class="text" for="hr">HR</label>
+                        <input type="checkbox" id="sales" name="sales" value="Sales">
+                        <label class="text" for="sales">Sales</label>
+                        <input type="checkbox" id="finance" name="finance" value="Finance">
+                        <label class="text" for="finance">Finance</label>
+                        <input type="checkbox" id="engineer" name="engineer" value="Engineer">
+                        <label class="text" for="engineer">Engineer</label>
+                        <input type="checkbox" id="others" name="others" value="Others">
+                        <label class="text" for="others">Others</label>
+                    </div>
+                </div>
+                <div class="row-content" style="margin-top: 30px;">
+                <label for="salary" class="label text">Choose Your Salary</label>
+                <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="40000">
+                <output class="salary-output text" for="salary">400000</output>
+                </div>
             </form>
     </body>
 </html>
