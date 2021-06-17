@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../js/FormValidation.js"></script>
+    <script type="text/javascript" src="../js/EmployeePayroll.js"></script>
+    <script type="text/javascript" src="../js/site_property.js"></script>
+    <script type="text/javascript" src="../js/utility.js"></script>
     <link rel="stylesheet" href="../css/AddEmployee.css">
     <title>Employee Payroll Form</title>
 </head>
@@ -19,31 +23,32 @@
             </div>
         </header>
         <div class="form-content">
-            <form action="#" class="form" onsubmit="save();return false" method="GET" name="">
+            <form action="#" class="form" onsubmit="save(event)" name="">
                 <div class="form-head">
                     Employee Payroll Form
                 </div>
                 <div class="row-content">
                     <label for="name" class="label text">Name</label>
                     <input type="text" class="input" id="name" name="name" placeholder="Your name.." required>
+                    <error-output class="error-output" for="text"></error-output>
                 </div>
                 <div class="row-content">
                     <label for="profile" class="label text">Profile Image</label>
                     <div class="profile-radio-content"> 
                         <label for="">
-                            <input type="radio" id="profile1" name="profile1" value="D:\EmployeePayroll\assets\profile-images\Ellipse -10.png">
+                            <input type="radio" id="profile1" name="profile" value="D:\EmployeePayroll\assets\profile-images\Ellipse -10.png">
                             <img class="profile" src="../assets/profile-images/Ellipse -10.png" alt="">
                         </label>
                         <label for="">
-                            <input type="radio" id="profile2" name="profile1" value="D:\EmployeePayroll\assets\profile-images\Ellipse -2.png">
+                            <input type="radio" id="profile2" name="profile" value="D:\EmployeePayroll\assets\profile-images\Ellipse -2.png">
                             <img class="profile" src="../assets/profile-images/Ellipse -2.png" alt="">
                         </label>
                         <label for="">
-                            <input type="radio" id="profile3" name="profile1" value="D:\EmployeePayroll\assets\profile-images\Ellipse -1.png">
+                            <input type="radio" id="profile3" name="profile" value="D:\EmployeePayroll\assets\profile-images\Ellipse -1.png">
                             <img class="profile" src="../assets/profile-images/Ellipse -1.png" alt="">
                         </label>
                         <label for="">
-                            <input type="radio" id="profile4" name="profile1" value="D:\EmployeePayroll\assets\profile-images\Ellipse -3.png">
+                            <input type="radio" id="profile4" name="profile" value="D:\EmployeePayroll\assets\profile-images\Ellipse -3.png">
                             <img class="profile" src="../assets/profile-images/Ellipse -3.png" alt="">
                         </label>
                     </div>
@@ -51,36 +56,37 @@
                 <div class="row-content" style="margin-top: 30px;">
                     <label class=" label text" for="gender">Gender</label>
                     <div>
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="gender" value="M">
                         <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
+                        <input type="radio" id="female" name="gender" value="F">
                         <label for="female">Female</label>
                     </div>
                 </div>
                 <div class="row-content" style="margin-top: 30px;">
                     <label class=" label text" for="deoartnent">Department</label>
                     <div>
-                        <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                        <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
                         <label class="text" for="hr">HR</label>
-                        <input type="checkbox" id="sales" name="sales" value="Sales">
+                        <input type="checkbox" id="sales" name="department" value="Sales">
                         <label class="text" for="sales">Sales</label>
-                        <input type="checkbox" id="finance" name="finance" value="Finance">
+                        <input type="checkbox" id="finance" name="department" value="Finance">
                         <label class="text" for="finance">Finance</label>
-                        <input type="checkbox" id="engineer" name="engineer" value="Engineer">
+                        <input type="checkbox" id="engineer" name="department" value="Engineer">
                         <label class="text" for="engineer">Engineer</label>
-                        <input type="checkbox" id="others" name="others" value="Others">
+                        <input type="checkbox" id="others" name="department" value="Others">
                         <label class="text" for="others">Others</label>
                     </div>
                 </div>
                 <div class="row-content" style="margin-top: 30px;">
                 <label for="salary" class="label text">Choose Your Salary</label>
-                <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="40000">
-                <output class="salary-output text" for="salary">400000</output>
+                <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="">
+                <output id="sout" class="salary-output text" for="salary">400000</output>
                 </div>
                 <div class="row-content" style="margin-top: 30px;">
                     <label for="date" class="label text">Start Date</label>
                     <div>
-                        <select name="Day" id="day">
+                        <select name="day" id="day">
+                            <option>Day</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -113,7 +119,8 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
-                        <select name="Month" id="month">
+                        <select id="month" name="month">
+                            <option>Month</option>
                             <option value="Jan">January</option>
                             <option value="Feb">February</option>
                             <option value="March">March</option>
@@ -121,19 +128,22 @@
                             <option value="May">May</option>
                             <option value="June">June</option>
                             <option value="July">July</option>
-                            <option value="August">August</option>
+                            <option value="Aug">August</option>
                             <option value="Sept">September</option>
                             <option value="Oct">October</option>
                             <option value="Nov">November</option>
                             <option value="Dec">December</option>
                         </select>
-                        <select id="year" name="Year">
+                        <select id="year" name="year">
+                            <option>Year</option>
+                            <option value="2021">2021</option>
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                             <option value="2017">2017</option>
                             <option value="2016">2016</option>
                         </select>
+                        <error-output class="date-error" for="error"></error-output>
                     </div>    
                 </div>
                 <div class="row-content">
@@ -144,10 +154,10 @@
                     <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                     <div class="submit-reset">
                         <button type="submit" class="button submitButton" id="submitButton">Submit</button>
-                        <button type="reset" class="resetButton button">Reset</button>
+                        <button type="reset" onclick="resetForm()" class="resetButton button">Reset</button>
                     </div>
                 </div>
             </form>
-            <script src="../js/salaryRange.js"></script>
+            <script type="text/javascript" src="../js/salaryRange.js"></script>
     </body>
 </html>
